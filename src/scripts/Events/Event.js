@@ -5,6 +5,7 @@ export const EventComponent = (eventObj) => {
                 <p id class="eventdate">${eventObj.date}</p>
                 <p id class="eventLocation">${eventObj.location}</p>
                 <p id class="eventHost">${eventObj.user.username}</p>
+            <button id="deleteNote--${eventObj.id}">Delete</button>
     </div>
             `
 }

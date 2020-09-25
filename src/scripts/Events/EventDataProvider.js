@@ -30,3 +30,10 @@ export const saveEvent = (newEventObj) => {
     })
     .then(dispatchStateChangeEvent)
 }
+
+export const deleteEvent = eventId => {
+    return fetch(`http://localhost:8088/events/${eventId}`, {
+        method: "DELETE"
+    })
+        .then(getEvents)
+}
