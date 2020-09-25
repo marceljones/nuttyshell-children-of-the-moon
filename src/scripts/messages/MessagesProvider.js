@@ -4,17 +4,19 @@
 //Viewing all chats with most recent at the bottom
 //Delete a previous message & remove from the database and UI
 
-let messages = []
+let messages = [];
+
+const eventHub = document.querySelector(".main")
 
 const dispatchStateChangeEvent = () =>{
     const messageStateChangedEvent = new CustomEvent("newMessage")
-    eventHUb.dispatchEvent(messageStateChangedEvent)
+    eventHub.dispatchEvent(messageStateChangedEvent)
 }
 
 //Get all messages from API
 
 export const getMessages = () => {
-    return fetch ("http://localhost:8088/messages")
+    return fetch ("http://localhost:8088/messages?_expand=user")
     .then(response => response.json())
     .then(parsedMessages => {
         messages = parsedMessages
@@ -22,13 +24,8 @@ export const getMessages = () => {
 }
 
 //use the messages sorted by date
-
 export const useMessages = () => {
-    const sortDate = messages.sort(
-        (nextEntry, currentEntry) => 
-        Date.parse(nextEntry.date) - Date.parse(currentEntry.date)
-    )
-    return sortDate
+    return messages.slice();
 }
 
 //save a new message
@@ -39,6 +36,7 @@ export const saveMessage = messageObj => {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify
+        body: JSON.stringify(messageObj)
     })
+    .then(dispatchStateChangeEvent)
 }
