@@ -21,11 +21,12 @@ export const TaskListComponent = () => {
         })
     }
 
-
+//save button listener
 eventHub.addEventListener("savedTask", event => {
     TaskListComponent()
 })
 
-// eventHub.addEventListener("checkboxComplete", event => {
-//     const clickedBox = event.detail.isCompleted === true
-// })
+//checkbox listener
+eventHub.addEventListener("checkboxComplete", event => {
+    const clickedBox = event.detail.isCompleted === true
+})

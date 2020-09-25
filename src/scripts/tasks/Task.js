@@ -6,16 +6,17 @@ const eventHub = document.querySelector(".main")
 const fieldTarget = document.querySelector(".taskContent")
 
 
-// eventHub.addEventListener( 'change', event => {
-//     if(event.checked) {
-//       const customEvent2 = new CustomEvent("checkboxComplete", {
-//         detail: {
-//           isCompleted: true
-//         }
-//       })
-//       eventHub.dispatchEvent(customEvent2)
-//     } 
-// });
+eventHub.addEventListener( 'change', event => {
+    if(event.checked) {
+      const customEvent2 = new CustomEvent("checkboxComplete", {
+        detail: {
+          isCompleted: true
+        }
+      })
+      eventHub.dispatchEvent(customEvent2)
+    } 
+    getTasks()
+});
 
 
 
