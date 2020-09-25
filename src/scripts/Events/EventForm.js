@@ -8,11 +8,14 @@ eventHub.addEventListener("click", event => {
         const dateTarget = document.querySelector("#eventDate")
         const locationTarget = document.querySelector("#eventLocation")
 
+        
+        debugger;
         const newNote = {
             name: nameTarget.value,
             date: dateTarget.value,
             location: locationTarget.value,
-            // userID: 
+            userID: 
+            // need to be able to grab userId from session storage here
         }
 
         saveEvent(newNote)
