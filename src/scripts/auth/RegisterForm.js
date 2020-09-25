@@ -1,3 +1,4 @@
+
 const contentTarget = document.querySelector(".auth--register")
 const eventHub = document.querySelector(".container")
 
@@ -24,8 +25,7 @@ eventHub.addEventListener("click", e => {
                         },
                         body: JSON.stringify({
                             "username": username,
-                            "email": email
-                        })
+                            "email": email                        })
                     })
                         .then(response => response.json())
                         .then((newUser) => {
@@ -37,6 +37,7 @@ eventHub.addEventListener("click", e => {
                 }
                 else {
                     window.alert("Username already exists!  😭")
+                   
                 }
             })
         }
