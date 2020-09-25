@@ -5,9 +5,9 @@ const eventHub = document.querySelector(".main");
 const contentTarget = document.querySelector("#article--list");
 
 export const ArticleList = () => {
-    getArticles()
-        .then(useArticles)
-        .then(addArticlesToDom);
+    getArticles().then(() => {
+        addArticlesToDom(useArticles());
+    });
 };
 
 const addArticlesToDom = articleArray => {

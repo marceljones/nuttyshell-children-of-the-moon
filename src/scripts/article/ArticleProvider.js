@@ -1,4 +1,4 @@
-const articlelURL = " http://localhost:8088/users?_embed=articles";
+const articlelURL = "http://localhost:8088/articles";
 
 let articles = [];
 
@@ -35,7 +35,7 @@ export const saveArticle = newArticleObj => {
 };
 
 export const deleteArticle = id => {
-    return fetch(` http://localhost:8088/users?_embed=articles${articles.id}`, {
+    return fetch(`http://localhost:8088/articles/${id}`, {
             method: "DELETE"
         })
         .then(getArticles)

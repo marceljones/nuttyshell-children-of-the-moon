@@ -1,7 +1,7 @@
 import { getArticles, useArticles, saveArticle } from "./ArticleProvider.js";
 
 const eventHub = document.querySelector(".main");
-const contentTarget = document.querySelector("#articleCard");
+const contentTarget = document.querySelector("#article--form");
 
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "add--article") {
@@ -11,10 +11,11 @@ eventHub.addEventListener("click", clickEvent => {
         const dateContent = document.querySelector("#article-date");
 
         const newArticle = {
+            userId: parseInt(sessionStorage.getItem("activeUser")),
             title: titleContent.value,
             synopsis: synopsisContent.value,
-            date: urlContent.value,
-            mood: dateContent.value
+            url: urlContent.value,
+            date: dateContent.value
         };
         saveArticle(newArticle);
         render();
@@ -26,15 +27,22 @@ const render = () => {
 
     <form>
         
-        
-        <label for="title">Title</label>
-        <input type="text" class="title" name="title" id="article-title">
-        <label for="synopsis">Synopsis</label>
-        <textarea type="text" name="synopsis" id="article--synopsis" cols="40" rows="5"></textarea>
-        <label for="url">URL</label>
-        <input type="url" class="url" name="url" id="article--url">
-        <label for="date">Date</label>
-        <input type="date" class="date" name="date" id="article-date">
+        <fieldset>
+             <label for="title">Title</label>
+            <input type="text" class="title" name="title" id="article-title">
+        </fieldset>
+        <fieldset>
+            <label for="synopsis">Synopsis</label>
+            <textarea type="text" name="synopsis" id="article--synopsis" cols="40" rows="5"></textarea>
+        </fieldset>
+        <fieldset>
+            <label for="url">URL</label>
+            <input type="url" class="url" name="url" id="article--url">
+        </fieldset>
+        <fieldset>
+            <label for="date">Date</label>
+            <input type="date" class="date" name="date" id="article-date">
+        </fieldset>
         
         <button id="add--article" type="button">Add New Article</button>
         
