@@ -8,17 +8,15 @@ eventHub.addEventListener("click", event => {
         const dateTarget = document.querySelector("#eventDate")
         const locationTarget = document.querySelector("#eventLocation")
 
-        
-        debugger;
         const newNote = {
+            userId: parseInt(sessionStorage.getItem("activeUser")),
             name: nameTarget.value,
             date: dateTarget.value,
-            location: locationTarget.value,
-            userID: 
-            // need to be able to grab userId from session storage here
+            location: locationTarget.value
         }
 
         saveEvent(newNote)
+        EventForm()
     }
 })
 
@@ -39,14 +37,9 @@ export const EventForm = () => {
             <input type="text" Location="eventLocation" id="eventLocation">
         </fieldset>
         <button type="button" id="saveEvent">Save Event</button>
-    </form>`
+    </form>
+    `
 }
-
-// "id": 1,
-// "userId": 1,
-// "name": "here's the event", 
-// "date": "10/31/2020",
-// "location": "123 road"
 
 export const EventEntryForm = () => {
     getEvents()

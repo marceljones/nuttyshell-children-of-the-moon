@@ -8,7 +8,7 @@ eventHub.addEventListener("eventStateChanged", event => {
 })
 
 const render = arrayOfEvents => {
-    const entryLog = document.querySelector("#eventCard")
+    const entryLog = document.querySelector("#eventList")
     let HTMLArray = arrayOfEvents.map(event => EventComponent(event))
     entryLog.innerHTML = HTMLArray.join("") 
 }
