@@ -1,61 +1,63 @@
-import { getTasks, saveTasks } from "./TaskDataProvider.js";
+import { getTasks, saveTasks, useTasks } from "./TaskDataProvider.js";
 /*
 	A bunch of input boxes related to the note information
 */
-const eventHub = document.querySelector("main");
-const contentTarget = document.querySelector(".taskCard");
+const eventHub = document.querySelector(".main");
+const contentTarget = document.querySelector("#taskForm");
 
 
 eventHub.addEventListener("click", clickEvent => {
-	if(clickEvent.target.id === "recordJournal"){
-        const entryDate = document.querySelector("#journalDate")
-        const entryConcept = document.querySelector("#conceptsText")
-        const entryEntry = document.querySelector("#textarea")
-        const entryMood =  document.querySelector("#mood")
+	if(clickEvent.target.id === "saveTask"){
+        // const userId = document.querySelector("")
+        const taskName = document.querySelector("#taskName")
+        const taskCompleteDate = document.querySelector("#taskCompleteDate")
+        const isCompleted = document.querySelector("#completeButton")
         
-        
-            const newEntry = {
-                date: entryDate.value,
-                concept: entryConcept.value,
-                entry: entryEntry.value,
-                moodId: parseInt(entryMood.value)
+            const newTask = {
+                userId: parseInt(sessionStorage.getItem("activeUser")), 
+                task: taskName.value,
+                completeBy: taskCompleteDate.value,
+                isCompleted: false
             }
 
-            saveEntry(newEntry)
+            saveTasks(newTask)
 	}
 })
 
+
+// field: enter task name x 
+// field: expected completion date
+// checkbox: indicating task is complete
+// --- upon clicking, task clears from DOM & changes to complete
+// --- or clicling delete, task deletes from api.  
 
 
 //actual form on html to create a new task 
 const render = () => {
     contentTarget.innerHTML = `
-    <section id="form">
+    <section id="taskForm">
     <form action="">
         <fieldset>
-            <label for="journalDate">date of entry</label>
-            <input type="date" name="journalDate" id="journalDate">          
+            <label for="taskName">task name</label>
+            <input type="name" name="taskName" id="taskName">          
         </fieldset>
         <fieldset>
-            <label for="conceptsText">concepts covered</label>
-            <input type="concept" name="conceptsText" id="conceptsText">         
+            <label for="taskCompleteDate">expected completion date:</label>
+            <input type="complete" name="taskCompleteDate" id="taskCompleteDate">         
         </fieldset>
-        <fieldset>
-            <label for="entryText">journal entry</label>
-            <textarea id="textarea"></textarea>     
-        </fieldset>
-        <button id="recordJournal" type="button">record journal :)</button>           
+        <button id="saveTask" type="button">save task</button>           
     </form>
-</section>
+    </section>
     `
 }
+
 
 
 
 export const TaskFormComponent = () => {
     getTasks()
     .then(() => {
-        const allMoods = useMoods()
-        render(allMoods)
+        const allTasks = useTasks()
+        render(allTasks)
     })
 }

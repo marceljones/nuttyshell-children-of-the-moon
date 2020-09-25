@@ -2,19 +2,37 @@
 
 import {getTasks} from "./TaskDataProvider.js"
 
+const eventHub = document.querySelector(".main")
+const fieldTarget = document.querySelector(".taskContent")
+
+
+// eventHub.addEventListener( 'change', event => {
+//     if(event.checked) {
+//       const customEvent2 = new CustomEvent("checkboxComplete", {
+//         detail: {
+//           isCompleted: true
+//         }
+//       })
+//       eventHub.dispatchEvent(customEvent2)
+//     } 
+// });
+
+
+
+
 export const TaskInputField = (taskTaco) => {
     return `
     <section id="entry--${taskTaco.id}" class="taskPost">
-        <p>task: ${taskTaco.task.value}</p>
-        <p>complete by: ${taskTaco.completeBy.value}</p>
+        <p>task: ${taskTaco.task}</p>
+        <p>complete by: ${taskTaco.completeBy}</p>
         <p><div>
-        <input type="checkbox" id="completed" name="completed" value="completed">
+        <input type="checkbox" id="myCheck--${taskTaco.id}">
         <label for="completed">completed task?</label>
       </div>
+      <div> ${taskTaco.isCompleted}</div>
       <div>
-        <button type="completed">Complete!</button>
+        <button type="deleteButton" id="deleteButton">delete!</button>
       </div> </p>
         </section>
     `
 }
-

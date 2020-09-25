@@ -1,5 +1,6 @@
 let tasks = []
-const eventHub = document.querySelector("main")
+
+const eventHub = document.querySelector(".main")
 const contentTarget = document.querySelector(".taskCard")
 
 const dispatchStateChangeEvent = () => {
@@ -7,21 +8,20 @@ const dispatchStateChangeEvent = () => {
     eventHub.dispatchEvent(taskStateChangedEvent)
 }
 
+
 export const getTasks = () => {
-    return fetch("http://localhost:8088/tasks") //fetch tasks
+    return fetch("http://localhost:8088/tasks?_expand=user") //fetch tasks
     .then(response => response.json())
     .then(taskArray => {
         tasks = taskArray
     })
 }
 
+
 export const useTasks = () => {
-    const sortedByDate = tasks.sort(
-        (currentEntry, nextEntry) =>
-            Date.parse(currentEntry.date) - Date.parse(nextEntry.date)
-    )
-    return sortedByDate
+    return tasks.slice()
 }
+
 
 export const saveTasks = (taskTaco) => {
     return fetch("http://localhost:8088/tasks", {
@@ -31,5 +31,8 @@ export const saveTasks = (taskTaco) => {
         }, 
         body: JSON.stringify(taskTaco)
     })
+    // .then (() => {
+    //     return getTasks()
+    // })
     .then(dispatchStateChangeEvent)
 }
