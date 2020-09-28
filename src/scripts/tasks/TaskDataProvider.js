@@ -36,3 +36,13 @@ export const saveTasks = (taskTaco) => {
     // })
     .then(dispatchStateChangeEvent)
 }
+
+
+
+export const deleteTask = id => {
+    return fetch(`http://localhost:8088/articles/${id}`, {
+            method: "DELETE"
+        })
+        .then(getTasks)
+        .then(dispatchStateChangeEvent);
+};

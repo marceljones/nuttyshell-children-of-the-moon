@@ -30,3 +30,12 @@ eventHub.addEventListener("savedTask", event => {
 eventHub.addEventListener("checkboxComplete", event => {
     const clickedBox = event.detail.isCompleted === true
 })
+
+//delete task listener
+eventHub.addEventListener("click", event => {
+    event.preventDefault();
+    if (event.target.id.startsWith("deleteTask--")) {
+        const [prefix, id] = event.target.id.split("--");
+        deleteArticle(id);
+    }
+});

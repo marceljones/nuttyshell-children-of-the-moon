@@ -32,7 +32,7 @@ export const TaskInputField = (taskTaco) => {
       </div>
       
       <div>
-        <button type="deleteButton" id="deleteButton">Delete!</button>
+        <button type="deleteButton" id="deleteTask--${taskTaco.id}">Delete!</button>
       </div> </p>
         </section>
     `
