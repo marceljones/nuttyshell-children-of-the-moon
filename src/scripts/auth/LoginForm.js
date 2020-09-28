@@ -1,3 +1,5 @@
+import {Nutshell} from "../Nutshell.js"
+
 const contentTarget = document.querySelector(".auth--login")
 const eventHub = document.querySelector(".container")
 
@@ -17,7 +19,9 @@ eventHub.addEventListener("click", e => {
                     sessionStorage.setItem("activeUser", user.id)
                     eventHub.dispatchEvent(new CustomEvent("userAuthenticated"))
                 }
+            
             })
+            .then(Nutshell())
     }
 })
 
@@ -26,7 +30,7 @@ const render = () => {
     contentTarget.innerHTML += `
         <section class="login">
             <input id="login__username" type="text" placeholder="Enter your username">
-            <button id="login__button">Log In</button>
+            <button type="button" id="login__button">Log In</button>
         </section>
     `
 }

@@ -13,12 +13,10 @@ import { Nutshell } from "./Nutshell.js"
 */
 
 
-
 const existingUser= sessionStorage.getItem("activeUser");
     if (existingUser) {
        Nutshell();
     } else {
-        RegisterForm();
         LoginForm();
+        RegisterForm();
     }
-
