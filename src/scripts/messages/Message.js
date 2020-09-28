@@ -1,6 +1,7 @@
 
 //Event Listener for Delete Button
 
+import { deleteMessage } from "./MessagesProvider.js"
 
 
 export const messageEntryComponent = (newMessage) => {
