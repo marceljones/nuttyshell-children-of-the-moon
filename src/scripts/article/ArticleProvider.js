@@ -1,4 +1,6 @@
-const articlelURL = "http://localhost:8088/articles";
+const articlelURL = `http://localhost:8088/articles?userId=${parseInt(
+  sessionStorage.getItem("activeUser")
+)}`;
 
 let articles = [];
 

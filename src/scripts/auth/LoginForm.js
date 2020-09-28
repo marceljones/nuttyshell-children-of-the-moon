@@ -1,30 +1,28 @@
-import {Nutshell} from "../Nutshell.js"
+import { Nutshell } from "../Nutshell.js";
 
-const contentTarget = document.querySelector(".auth--login")
-const eventHub = document.querySelector(".container")
+const contentTarget = document.querySelector(".auth--login");
+const eventHub = document.querySelector(".container");
 
 eventHub.addEventListener("userAuthenticated", e => {
-    contentTarget.innerHTML = ""
-})
+    contentTarget.innerHTML = "";
+});
 
 eventHub.addEventListener("click", e => {
     if (e.target.id === "login__button") {
-        const username = document.querySelector("#login__username").value
+        const username = document.querySelector("#login__username").value;
 
         return fetch(`http://localhost:8088/users?username=${username}`)
             .then(response => response.json())
             .then(users => {
                 if (users.length > 0) {
-                    const user = users[0]
-                    sessionStorage.setItem("activeUser", user.id)
-                    eventHub.dispatchEvent(new CustomEvent("userAuthenticated"))
+                    const user = users[0];
+                    sessionStorage.setItem("activeUser", user.id);
+                    eventHub.dispatchEvent(new CustomEvent("userAuthenticated"));
                 }
-            
             })
-            .then(Nutshell())
+            .then(Nutshell());
     }
-})
-
+});
 
 const render = () => {
     contentTarget.innerHTML += `
@@ -32,9 +30,9 @@ const render = () => {
             <input id="login__username" type="text" placeholder="Enter your username">
             <button type="button" id="login__button">Log In</button>
         </section>
-    `
-}
+    `;
+};
 
 export const LoginForm = () => {
-    render()
-}
+    render();
+};
