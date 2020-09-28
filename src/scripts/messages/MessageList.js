@@ -29,7 +29,7 @@ eventHub.addEventListener("click", e => {
         const [prefix, id] = e.target.id.split("-")
         deleteMessage(id).then(
             () => {
-                const updatedMessages = useMessages
+                const updatedMessages = useMessages()
                 render(updatedMessages)
             }
         )
