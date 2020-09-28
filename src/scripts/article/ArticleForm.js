@@ -1,3 +1,4 @@
+import { messageListComponent } from "../messages/MessageList.js";
 import { getArticles, useArticles, saveArticle } from "./ArticleProvider.js";
 
 const eventHub = document.querySelector(".main");
