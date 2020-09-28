@@ -7,7 +7,6 @@ eventHub.addEventListener("click", event => {
         const nameTarget = document.querySelector("#eventName")
         const dateTarget = document.querySelector("#eventDate")
         const locationTarget = document.querySelector("#eventLocation")
-        const eventToEdit = entriesCollection.find(your_function_here)
 
         const newNote = {
             userId: parseInt(sessionStorage.getItem("activeUser")),

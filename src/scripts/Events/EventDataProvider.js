@@ -49,4 +49,6 @@ export const editEvent = (event) => {
         },
         body: JSON.stringify(event)
     })
+    .then(getEvents)
+    .then(dispatchStateChangeEvent)
 }

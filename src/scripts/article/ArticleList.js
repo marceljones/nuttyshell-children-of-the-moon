@@ -22,7 +22,7 @@ eventHub.addEventListener("articlelStateChanged", () => {
 });
 
 eventHub.addEventListener("click", event => {
-    event.preventDefault();
+    // event.preventDefault();
     if (event.target.id.startsWith("deleteArticle--")) {
         const [prefix, id] = event.target.id.split("--");
         deleteArticle(id);
