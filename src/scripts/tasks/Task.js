@@ -26,7 +26,7 @@ export const TaskInputField = (taskTaco) => {
         <p>Task: ${taskTaco.task}</p>
         <p>Complete By: ${taskTaco.completeBy}</p>
         <p><div>
-        <input type="checkbox" id="myCheck--${taskTaco.id}">
+        <input type="checkbox" value="true" id="myCheck--${taskTaco.id}">
         <label for="myCheck--${taskTaco.id}">Completed Task?</label>
       </div>
       <div>

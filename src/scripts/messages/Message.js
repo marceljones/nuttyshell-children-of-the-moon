@@ -1,8 +1,6 @@
 
 //Event Listener for Delete Button
 
-
-
 export const messageEntryComponent = (newMessage) => {
     return `
     <section id="messageInput">

@@ -10,7 +10,9 @@ const dispatchStateChangeEvent = () => {
 
 
 export const getTasks = () => {
-    return fetch(`http://localhost:8088/tasks?userId=${parseInt(sessionStorage.getItem("activeUser"))}`) //fetch tasks
+    const active = parseInt(sessionStorage.getItem("activeUser"))
+    return fetch(`http://localhost:8088/tasks?userId=${active}`)
+    
     .then(response => response.json())
     .then(taskArray => {
         tasks = taskArray
@@ -31,9 +33,7 @@ export const saveTasks = (taskTaco) => {
         }, 
         body: JSON.stringify(taskTaco)
     })
-    // .then (() => {
-    //     return getTasks()
-    // })
+    
     .then(dispatchStateChangeEvent)
 }
 
@@ -46,3 +46,19 @@ export const deleteTask = id => {
         .then(getTasks)
         .then(dispatchStateChangeEvent);
 };
+
+
+
+export const editTask = (taskObj, id) => {
+    return fetch(`http://localhost:8088/tasks/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(taskObj)
+    })
+      .then(() => {
+        getTasks(active)
+      })
+      .then(dispatchStateChangeEvent)
+  }

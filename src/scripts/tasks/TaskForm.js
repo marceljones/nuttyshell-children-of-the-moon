@@ -1,4 +1,4 @@
-import { getTasks, saveTasks, useTasks } from "./TaskDataProvider.js";
+import { getTasks, saveTasks, useTasks, editTask } from "./TaskDataProvider.js";
 /*
 	A bunch of input boxes related to the note information
 */
@@ -12,7 +12,7 @@ eventHub.addEventListener("click", clickEvent => {
         const taskName = document.querySelector("#taskName")
         const taskCompleteDate = document.querySelector("#taskCompleteDate")
         const isCompleted = document.querySelector("#completeButton")
-        
+
             const newTask = {
                 userId: parseInt(sessionStorage.getItem("activeUser")), 
                 task: taskName.value,
@@ -23,6 +23,9 @@ eventHub.addEventListener("click", clickEvent => {
             saveTasks(newTask)
 	}
 })
+
+
+
 
 
 // field: enter task name x 
