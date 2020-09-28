@@ -4,6 +4,8 @@ import { EventEntryForm } from "./Events/EventForm.js"
 import { EventList } from "./Events/EventList.js"
 import { ArticleForm } from "./article/ArticleForm.js";
 import { ArticleList } from "./article/ArticleList.js";
+import { messageListComponent } from "./messages/MessageList.js";
+import { messageForm } from "./messages/MessageForm.js";
 
 export const Nutshell = () => {
     TaskListComponent()
@@ -13,4 +15,6 @@ export const Nutshell = () => {
     ArticleList();
     EventList();
     EventEntryForm();
+    messageListComponent();
+    messageForm();
 };
