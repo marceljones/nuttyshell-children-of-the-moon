@@ -1,4 +1,5 @@
 import { EventComponent } from "./Event.js"
+import { editEvent } from "./EventDataProvider.js"
 import { getEvents, useEvents, deleteEvent } from "./EventDataProvider.js"
 
 const eventHub = document.querySelector(".main")
@@ -36,5 +37,24 @@ eventHub.addEventListener("click", clickEvent => {
                render(updatedEvents)
            }
        )
+    }
+})
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("editEntry--")) {
+        const [notUsed, entryId] = clickEvent.target.id.split("--")
+        
+        /*
+            Let all other components know that the user chose
+            to edit an entry, and attach data to the message
+            so that any listeners know which entry should be
+            edited.
+        */
+        const customEvent = new CustomEvent("eventEditChange", {
+            detail: {
+                JournalEntryId: entryId
+            }
+        })
+        eventHub.dispatchEvent
     }
 })
