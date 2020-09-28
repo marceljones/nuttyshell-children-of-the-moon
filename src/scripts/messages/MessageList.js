@@ -8,7 +8,7 @@ eventHub.addEventListener("newMessage", ()=> {
     messageListComponent()
 })
 
-const render = (message) => {
+const render = message => {
     let HTMLArray = message.map(newMessage => {
         return messageEntryComponent(newMessage);
     })

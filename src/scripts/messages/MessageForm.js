@@ -1,4 +1,4 @@
-import { getMessages, useMessages, saveMessage } from "./MessagesProvider.js"
+import { getMessages, useMessages, saveMessage, deleteMessage } from "./MessagesProvider.js"
 
 const eventHub = document.querySelector(".main")
 const contentTarget = document.querySelector("#messageInput")
@@ -25,8 +25,8 @@ const render = () => {
     <fieldset>
         <h3>New Message</h3>
         <textarea id="text" placeholder="New Message Here"></textarea>
+        <button type="button" class="button" id="submitButton">Submit</button> 
     </fieldset>
-    <button type="button" class="button" id="submitButton">Submit</button>
     </form>
     `
 }
