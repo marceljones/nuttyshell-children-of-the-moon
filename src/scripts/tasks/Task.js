@@ -10,7 +10,7 @@ eventHub.addEventListener( 'change', event => {
     if(event.checked) {
       const customEvent2 = new CustomEvent("checkboxComplete", {
         detail: {
-          isCompleted: true
+          isCompleted: true 
         }
       })
       eventHub.dispatchEvent(customEvent2)
@@ -24,15 +24,15 @@ eventHub.addEventListener( 'change', event => {
 export const TaskInputField = (taskTaco) => {
     return `
     <section id="entry--${taskTaco.id}" class="taskPost">
-        <p>task: ${taskTaco.task}</p>
-        <p>complete by: ${taskTaco.completeBy}</p>
+        <p>Task: ${taskTaco.task}</p>
+        <p>Complete By: ${taskTaco.completeBy}</p>
         <p><div>
         <input type="checkbox" id="myCheck--${taskTaco.id}">
-        <label for="completed">completed task?</label>
+        <label for="completed">Completed Task?</label>
       </div>
-      <div> ${taskTaco.isCompleted}</div>
+      
       <div>
-        <button type="deleteButton" id="deleteButton">delete!</button>
+        <button type="deleteButton" id="deleteButton">Delete!</button>
       </div> </p>
         </section>
     `

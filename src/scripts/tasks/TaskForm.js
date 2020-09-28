@@ -38,14 +38,14 @@ const render = () => {
     <section id="taskForm">
     <form action="">
         <fieldset>
-            <label for="taskName">task name</label>
+            <label for="taskName">Task</label>
             <input type="name" name="taskName" id="taskName">          
         </fieldset>
         <fieldset>
-            <label for="taskCompleteDate">expected completion date:</label>
-            <input type="complete" name="taskCompleteDate" id="taskCompleteDate">         
+            <label for="taskCompleteDate">Expected Completion Date:</label>
+            <input type="date" name="taskCompleteDate" id="taskCompleteDate">         
         </fieldset>
-        <button id="saveTask" type="button">save task</button>           
+        <button id="saveTask" type="button">Save Task</button>           
     </form>
     </section>
     `

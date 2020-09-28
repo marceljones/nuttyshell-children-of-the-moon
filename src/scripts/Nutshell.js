@@ -7,7 +7,6 @@ export const Nutshell = () => {
     TaskListComponent()
     TaskFormComponent()
     // Render all your UI components here
-EventList()
-EventEntryForm()
-
+    EventList()
+    EventEntryForm()
 }
