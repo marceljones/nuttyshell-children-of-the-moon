@@ -6,7 +6,7 @@ const contentTarget = document.querySelector("#messageInput")
 
 
 eventHub.addEventListener("click", e => {
-    
+
     if (e.target.id === "submitButton"){
         const messageContent = document.querySelector("#text")
         const taco = {
@@ -17,7 +17,7 @@ eventHub.addEventListener("click", e => {
         
         
         saveMessage(taco);
-}})
+    }})
 
 const render = () => {
     contentTarget.innerHTML = `
