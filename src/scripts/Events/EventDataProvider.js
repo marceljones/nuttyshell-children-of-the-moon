@@ -9,12 +9,15 @@ const dispatchStateChangeEvent = () => {
 }
 
 export const getEvents = () => {
-    return fetch ("http://localhost:8088/events?_expand=user") 
+    return fetch (`http://localhost:8088/events?_expand=user`) 
     .then(response => response.json())  
     .then(eventsArray => {
         events = eventsArray
     })
 }
+
+// export const getTasks = () => {
+//     return fetch(`http://localhost:8088/tasks?userId=${parseInt(sessionStorage.getItem("activeUser"))}`) //fetch tasks 
 
 export const useEvents = () => {
     return events.slice()

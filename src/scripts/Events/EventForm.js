@@ -37,6 +37,7 @@ export const EventForm = () => {
             <input type="text" Location="eventLocation" id="eventLocation">
         </fieldset>
         <button type="button" id="saveEvent">Save Event</button>
+        <input type="hidden" name="entryId" id="entryId">
     </form>
     `
 }
