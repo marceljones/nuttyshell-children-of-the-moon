@@ -11,13 +11,13 @@ eventHub.addEventListener("click", clickEvent => {
         // const userId = document.querySelector("")
         const taskName = document.querySelector("#taskName")
         const taskCompleteDate = document.querySelector("#taskCompleteDate")
-        const isCompleted = document.querySelector("#completeButton")
+        const checked = document.querySelector("#completeButton")
 
             const newTask = {
                 userId: parseInt(sessionStorage.getItem("activeUser")), 
                 task: taskName.value,
                 completeBy: taskCompleteDate.value,
-                isCompleted: false
+                checked: false
             }
 
             saveTasks(newTask)

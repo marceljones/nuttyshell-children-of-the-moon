@@ -10,23 +10,34 @@ eventHub.addEventListener( 'change', event => {
     if(event.checked) {
       const customEvent2 = new CustomEvent("checkboxComplete", {
         detail: {
-          isCompleted: true 
+          checked: true 
         }
       })
+    // checkTheBox()
       eventHub.dispatchEvent(customEvent2)
     } 
     getTasks()
-});
+}
+);
 
 
+// ?????
+// const checkTheBox = () => {
+//   if (document.querySelector('#myCheck').checked = false) {
+//     document.querySelector('.theCheckbox').style.visibility = 'visible';
+//   } else {
+//       document.querySelector('.theCheckbox').style.visibility = 'hidden';
+//     }
+// }
+  
 
 export const TaskInputField = (taskTaco) => {
     return `
     <section id="entry--${taskTaco.id}" class="taskPost">
         <p>Task: ${taskTaco.task}</p>
         <p>Complete By: ${taskTaco.completeBy}</p>
-        <p><div>
-        <input type="checkbox" value="true" id="myCheck--${taskTaco.id}">
+        <p><div class="theCheckbox">
+        <input type="checkbox" id="myCheck--${taskTaco.id}">
         <label for="myCheck--${taskTaco.id}">Completed Task?</label>
       </div>
       <div>
@@ -35,3 +46,4 @@ export const TaskInputField = (taskTaco) => {
         </section>
     `
 }
+
