@@ -1,13 +1,15 @@
 #article--list {
     display: flex;
     flex-direction: column;
-    width: auto;
     text-align: center;
 }
 
 .article-box {
     border: solid 3px black;
-    min-width: 45em;
+    min-width: 25em;
+    max-width: 25em;
+    max-height: 15em;
+    min-height: 15em;
     margin: 0.5em;
     align-self: center;
     border-radius: 8px;

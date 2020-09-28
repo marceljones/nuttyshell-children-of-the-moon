@@ -5,10 +5,8 @@ export const Article = articleObj => {
             <p>${articleObj.synopsis}</p> 
             <p><a href="${articleObj.url}">${articleObj.url}</a></p> 
             <p>${articleObj.date}</p> 
-            <button class="btn-delete" id="deleteArticle--${articleObj.id}">Delete Article</button>
-        </div>
-        <div>
-           
+            <button class="btn-edite" id="editeArticle--${articleObj.id}">Edit</button>
+            <button class="btn-delete" id="deleteArticle--${articleObj.id}">Delete</button>
         </div>
     `;
 };

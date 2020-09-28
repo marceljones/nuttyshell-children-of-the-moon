@@ -26,7 +26,6 @@ const render = () => {
     contentTarget.innerHTML = `
 
     <form>
-        
         <fieldset>
              <label for="title">Title</label>
             <input type="text" class="title" name="title" id="article-title">
@@ -43,10 +42,8 @@ const render = () => {
             <label for="date">Date</label>
             <input type="date" class="date" name="date" id="article-date">
         </fieldset>
-        
-        <button id="add--article" type="button">Add New Article</button>
-        
-            
+        <br>
+        <button id="add--article" type="button">Add New Article</button> 
     </form>
 
     `;

@@ -11,8 +11,8 @@ import { Nutshell } from "./Nutshell.js";
         ensure that the Nutshell component gets rendered
 */
 
+RegisterForm();
 LoginForm();
-
 const existingUser = sessionStorage.getItem("activeUser");
 if (existingUser) {
     Nutshell();
