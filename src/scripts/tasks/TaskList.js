@@ -1,4 +1,4 @@
-import { useTasks, getTasks} from "./TaskDataProvider.js";
+import { useTasks, getTasks, deleteTask} from "./TaskDataProvider.js";
 import { TaskInputField } from "./Task.js";
 
 // DOM reference to where all tasks will be rendered
@@ -36,6 +36,6 @@ eventHub.addEventListener("click", event => {
     event.preventDefault();
     if (event.target.id.startsWith("deleteTask--")) {
         const [prefix, id] = event.target.id.split("--");
-        deleteArticle(id);
+        deleteTask(id);
     }
 });

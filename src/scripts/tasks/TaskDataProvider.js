@@ -40,7 +40,7 @@ export const saveTasks = (taskTaco) => {
 
 
 export const deleteTask = id => {
-    return fetch(`http://localhost:8088/articles/${id}`, {
+    return fetch(`http://localhost:8088/tasks/${id}`, {
             method: "DELETE"
         })
         .then(getTasks)

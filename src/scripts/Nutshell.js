@@ -4,8 +4,6 @@ import { EventEntryForm } from "./Events/EventForm.js"
 import { EventList } from "./Events/EventList.js"
 import { ArticleForm } from "./article/ArticleForm.js";
 import { ArticleList } from "./article/ArticleList.js";
-import { EventEntryForm } from "./Events/EventForm.js";
-import { EventList } from "./Events/EventList.js";
 
 export const Nutshell = () => {
     TaskListComponent()
