@@ -1,0 +1,9 @@
+#eventCard {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.eventCardList {
+    padding: -1em;
+    margin-top: -1em;
+}

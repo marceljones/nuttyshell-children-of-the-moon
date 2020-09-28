@@ -3,7 +3,6 @@ import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
 
 
-
 /*
     1. Check if the user is authenticated by looking in session storage for `activeUser`
        -- 7:35 on Adam's video--
