@@ -51,6 +51,11 @@ export const deleteMessage = deletedMessage => {
     .then(dispatchStateChangeEvent)
 }
 
+//get selected message for edit
+export const getTheMessage = messageId => {
+    return fetch (`http://localhost:8088/messages/${messageId}?_expand=user`)
+    .then(response => response.json())
+}
 
 //edit message
 export const editMessage = (messageObj, messageId) => {
