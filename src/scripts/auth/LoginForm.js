@@ -18,10 +18,10 @@ eventHub.addEventListener("click", e => {
                     const user = users[0]
                     sessionStorage.setItem("activeUser", user.id)
                     eventHub.dispatchEvent(new CustomEvent("userAuthenticated"))
+                    .then(Nutshell())
                 }
             
             })
-            .then(Nutshell())
     }
 })
 
