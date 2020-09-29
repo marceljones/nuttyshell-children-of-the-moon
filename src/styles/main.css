@@ -32,6 +32,11 @@ body {
     margin: 0.5em;
     align-self: center;
     border-radius: 8px;
+    background-color: white;
+}
+
+#articleCard {
+    background-color: rgb(18, 9, 18);
 }
 
 /* Events */
@@ -40,14 +45,21 @@ body {
     background-color: rgb(62, 28, 51);
 }
 
-.eventCardList {
-    padding: -1em;
-    margin-top: -1em;
-    background-color: rgb(96, 39, 72);
-    padding: 1em;
+label {
+    color: white; 
 }
 
-/* Messages */
+.main {
+    display: flex;
+    justify-content: center;
+    margin: 2px;
+}
+
+.main2 {
+    width: 50%;
+    margin: 0px 2px 0px 0px;
+    background-color: lightgray;
+}
 
 #messageCard {
     border: solid 2px;
@@ -76,15 +88,21 @@ body {
     padding: 1em;
 }
 
-/* Weather */
-
-#weatherCard{
-    background-color: blue;
-    margin: 2em;
-    border: solid blue;
+.eventCardList {
+    background-color: white;
+    padding: 1em;
+    border-top: solid white 1px;
+    margin: 1em;
 }
 
-/* Page attributes */
+#eventList {
+    background-color:  rgb(96, 39, 72);
+}
+
+body {
+    font-family: 'David Libre', serif;
+    background-color: lightgray;
+}
 
 button:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
@@ -98,11 +116,74 @@ a:hover {
     color: green;
 }
 
-input textarea {
+input, textarea {
     width: 100%;
-    
 }
 
 input {
     border: 2px solid green;
+}
+
+#messageFormBox {
+    padding: 1em;
+}
+
+#articleformbox {
+    padding: 1em;
+    border: solid 1px;
+}
+
+#eventformbox {
+    padding: 1em;
+}
+
+#taskForm {
+    padding: 1em;
+}
+
+.taskPost {
+    padding: 1em;
+    border-bottom: solid; 
+}
+
+a {
+    color: purple;
+}
+
+a:hover {
+    color: green;
+}
+
+.theCheckbox {
+    float: right;
+    width: 2em;
+}
+
+aside {
+    float: right; 
+    width: 30%
+}
+
+#article--form {
+    background-color: rgb(96, 39, 72);
+}
+
+#taskList {
+    opacity: 80%;
+}
+
+h2 {
+    margin: 2px;
+    padding: 2px;
+    color: white
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(7, 3, 3);
+    color: white;
+    text-align: center;
 }

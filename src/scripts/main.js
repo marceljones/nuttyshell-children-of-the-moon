@@ -17,6 +17,8 @@ const existingUser = sessionStorage.getItem("activeUser");
     if (existingUser) {
        Nutshell();
     } else {
+        const contentTarget = document.querySelector(".main")
+        // contentTarget.innerHTML = ""
         LoginForm();
         RegisterForm();
     }
