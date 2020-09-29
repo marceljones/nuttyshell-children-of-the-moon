@@ -34,13 +34,14 @@ eventHub.addEventListener( 'change', event => {
 export const TaskInputField = (taskTaco) => {
     return `
     <section id="entry--${taskTaco.id}" class="taskPost">
-        <p>Task: ${taskTaco.task}</p>
+        <p>New Task: ${taskTaco.task}</p>
         <p>Complete By: ${taskTaco.completeBy}</p>
-        <p><div class="theCheckbox">
-        <input type="checkbox" id="myCheck--${taskTaco.id}">
+        
         <label for="myCheck--${taskTaco.id}">Completed Task?</label>
+        <div class="theCheckbox">
+        <input type="checkbox" id="myCheck--${taskTaco.id}"></p>
       </div>
-      <div>
+      <div><p>
         <button type="deleteButton" id="deleteTask--${taskTaco.id}">Delete!</button>
       </div> </p>
         </section>

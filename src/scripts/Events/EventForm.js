@@ -23,19 +23,13 @@ eventHub.addEventListener("click", event => {
 export const EventForm = () => {
     const contentTarget = document.querySelector("#eventForm")
     contentTarget.innerHTML = `
-    <form>
-        <fieldset>
+    <form id="eventformbox">
             <label for="eventName">Event Name</label>
-            <input type="text" name="eventName" id="eventName">
-        </fieldset>
-        <fieldset>
+            <p><input type="text" name="eventName" id="eventName"></p>
             <label for="eventDate">Event Date</label>
-            <input type="date" Date="eventDate" id="eventDate">
-        </fieldset>
-        <fieldset>
+            <p><input type="date" Date="eventDate" id="eventDate"></p>
             <label for="eventLocation">Event Location</label>
-            <input type="text" Location="eventLocation" id="eventLocation">
-        </fieldset>
+            <p><input type="text" Location="eventLocation" id="eventLocation"></p>
         <button type="button" id="saveEvent">Save Event</button>
         <input type="hidden" name="entryId" id="entryId">
     </form>
