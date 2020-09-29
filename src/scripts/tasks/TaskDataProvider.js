@@ -49,16 +49,16 @@ export const deleteTask = id => {
 
 
 
-export const editTask = (taskObj, id) => {
-    return fetch(`http://localhost:8088/tasks/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(taskObj)
-    })
-      .then(() => {
-        getTasks(active)
-      })
-      .then(dispatchStateChangeEvent)
-  }
+// export const editTask = (taskObj, id) => {
+//     return fetch(`http://localhost:8088/tasks/${id}`, {
+//       method: "PUT",
+//       headers: {
+//         "Content-Type": "application/json"
+//       },
+//       body: JSON.stringify(taskObj)
+//     })
+//       .then(() => {
+//         getTasks(active)
+//       })
+//       .then(dispatchStateChangeEvent)
+//   }

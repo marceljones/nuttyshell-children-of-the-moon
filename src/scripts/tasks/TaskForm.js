@@ -1,4 +1,4 @@
-import { getTasks, saveTasks, useTasks, editTask } from "./TaskDataProvider.js";
+import { getTasks, saveTasks, useTasks } from "./TaskDataProvider.js";
 /*
 	A bunch of input boxes related to the note information
 */
