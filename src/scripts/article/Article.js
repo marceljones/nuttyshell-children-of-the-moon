@@ -4,9 +4,13 @@ export const Article = articleObj => {
             <h3>${articleObj.title}</h3>
             <p>${articleObj.synopsis}</p> 
             <p><a href="${articleObj.url}">${articleObj.url}</a></p> 
-            <p>${articleObj.date}</p> 
-            <button class="btn-edite" id="editeArticle--${articleObj.id}">Edit</button>
-            <button class="btn-delete" id="deleteArticle--${articleObj.id}">Delete</button>
+            <p>${new Date(articleObj.date).toLocaleDateString("en-US")}</p> 
+            <button class="btn-edite" id="editeArticle--${
+              articleObj.id
+            }">Edit</button>
+            <button class="btn-delete" id="deleteArticle--${
+              articleObj.id
+            }">Delete</button>
         </div>
     `;
 };

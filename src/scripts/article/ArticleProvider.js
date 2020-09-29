@@ -1,6 +1,4 @@
-const articlelURL = `http://localhost:8088/articles?userId=${parseInt(
-  sessionStorage.getItem("activeUser")
-)}`;
+const articlelURL = `http://localhost:8088/articles`;
 
 let articles = [];
 
@@ -11,7 +9,9 @@ const dispatchStateChangeEvent = () => {
 };
 
 export const getArticles = () => {
-    return fetch(articlelURL)
+    // return fetch(`http://localhost:8088/tasks?userId=${parseInt(sessionStorage.getItem("activeUser"))}`) /
+    const activeUser = parseInt(sessionStorage.getItem("activeUser"));
+    return fetch(`${articlelURL}?userId=${activeUser}`)
         .then(response => response.json())
         .then(parsedRes => {
             articles = parsedRes;
@@ -23,17 +23,19 @@ export const useArticles = () => {
 };
 
 export const saveArticle = newArticleObj => {
-    return fetch(articlelURL, {
+    return (
+        fetch(articlelURL, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(newArticleObj)
         })
-        .then(() => {
-            getArticles();
-        })
-        .then(dispatchStateChangeEvent);
+        // .then(() => {
+        //     getArticles();
+        // })
+        .then(dispatchStateChangeEvent)
+    );
 };
 
 export const deleteArticle = id => {
