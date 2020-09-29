@@ -25,6 +25,7 @@ eventHub.addEventListener("click", clickEvent => {
 
 const render = () => {
     contentTarget.innerHTML = `
+<<<<<<< HEAD
 
     <form>
         <fieldset>
@@ -45,6 +46,23 @@ const render = () => {
             <input type="date" class="date" name="date" id="article-date">
         </p>
         <br>
+=======
+    
+    <form id="articleformbox">
+    <h2>New Article</h2><br>
+             <label for="title">Title</label>
+            <input type="text" class="title" name="title" id="article-title">
+                <br>
+            <label for="synopsis">Synopsis</label>
+            <textarea type="text" name="synopsis" id="article--synopsis" cols="40" rows="5"></textarea>
+                <br>
+            <label for="url">URL</label>
+            <input type="url" class="url" name="url" id="article--url">
+                <br>
+            <label for="date">Date</label>
+            <input type="date" class="date" name="date" id="article-date">
+            <br>
+>>>>>>> master
         <button id="add--article" type="button">Add New Article</button> 
     </form>
 

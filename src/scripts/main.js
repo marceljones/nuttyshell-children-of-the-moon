@@ -12,9 +12,20 @@ import { Nutshell } from "./Nutshell.js";
 */
 
 const existingUser = sessionStorage.getItem("activeUser");
+<<<<<<< HEAD
 if (existingUser) {
     Nutshell();
 } else {
     LoginForm();
     RegisterForm();
 }
+=======
+    if (existingUser) {
+       Nutshell();
+    } else {
+        const contentTarget = document.querySelector(".main")
+        // contentTarget.innerHTML = ""
+        LoginForm();
+        RegisterForm();
+    }
+>>>>>>> master
