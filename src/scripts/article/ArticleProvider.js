@@ -43,5 +43,5 @@ export const deleteArticle = id => {
             method: "DELETE"
         })
         .then(getArticles)
-        .then(dispatchStateChangeEvent);
+        // .then(dispatchStateChangeEvent);
 };
