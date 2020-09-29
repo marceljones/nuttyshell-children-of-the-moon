@@ -1,4 +1,4 @@
-const articlelURL = `http://localhost:8088/articles`;
+const articlelURL = ` http://localhost:8088/articles`;
 
 let articles = [];
 
@@ -9,7 +9,6 @@ const dispatchStateChangeEvent = () => {
 };
 
 export const getArticles = () => {
-    // return fetch(`http://localhost:8088/tasks?userId=${parseInt(sessionStorage.getItem("activeUser"))}`) /
     const activeUser = parseInt(sessionStorage.getItem("activeUser"));
     return fetch(`${articlelURL}?userId=${activeUser}`)
         .then(response => response.json())
@@ -39,9 +38,25 @@ export const saveArticle = newArticleObj => {
 };
 
 export const deleteArticle = id => {
-    return fetch(`http://localhost:8088/articles/${id}`, {
+    return (
+        fetch(`http://localhost:8088/articles/${id}`, {
             method: "DELETE"
         })
-        .then(getArticles)
-        // .then(dispatchStateChangeEvent);
+        // .then(getArticles)
+        .then(dispatchStateChangeEvent)
+    );
 };
+
+// export const editArticle = (editedArticleObj, id) => {
+//     return fetch(`http://localhost:8088/articles/${id}`, {
+//             method: "PUT",
+//             headers: {
+//                 "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify(editedArticleObj)
+//         })
+//         .then(() => {
+
+//         })
+//         .then(dispatchStateChangeEvent)
+// }

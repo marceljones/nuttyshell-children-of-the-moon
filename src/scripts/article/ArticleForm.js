@@ -28,21 +28,22 @@ const render = () => {
 
     <form>
         <fieldset>
-             <label for="title">Title</label>
-            <input type="text" class="title" name="title" id="article-title">
-        </fieldset>
-        <fieldset>
+        <p>
+            <label for="title">Title</label>
+            <input type="text" class="title" name="title" id="article-title"> 
+        </p>
+       <p>
             <label for="synopsis">Synopsis</label>
-            <textarea type="text" name="synopsis" id="article--synopsis" cols="40" rows="5"></textarea>
-        </fieldset>
-        <fieldset>
+            <input type="text" name="synopsis" id="article--synopsis"></input>
+        </p>
+       <p>
             <label for="url">URL</label>
             <input type="url" class="url" name="url" id="article--url">
-        </fieldset>
-        <fieldset>
+        </p>
+        <p>
             <label for="date">Date</label>
             <input type="date" class="date" name="date" id="article-date">
-        </fieldset>
+        </p>
         <br>
         <button id="add--article" type="button">Add New Article</button> 
     </form>
