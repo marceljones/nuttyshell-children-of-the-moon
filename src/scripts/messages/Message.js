@@ -1,18 +1,23 @@
-
-//Event Listener for Delete Button
-
-import { deleteMessage } from "./MessagesProvider.js"
+const allowDelete =(taco) => {
+    if(parseInt(sessionStorage.getItem("activeUser")) === taco.userId) {
+        return `
+        <button type="button" class="deleteButton" id="deleteMessage-${taco.id}">Delete Message</button> 
+        <button type="button" class="editButton" id="editMessage-${taco.id}">Edit Message</button> 
+        `
+    }else{
+        return ""
+    }
+}
 
 
 export const messageEntryComponent = (newMessage) => {
     return `
     <section id="messageInput">
-    <div id="megassages--${newMessage.id}">
-    <p><div class="message">${newMessage.message}</div>
-    <div class="messages--user"> From: ${newMessage.user.username}</div>
-    <div class="messages--date">Date: ${new Date(newMessage.date).toLocaleDateString('en-US')}</div></p>
-    <button type="button" class="deleteButton" id="deleteMessage-${newMessage.id}">Delete Message</button> 
-
+        <div id="megassages--${newMessage.id}">
+        <p><div class="message">${newMessage.message}</div>
+        <div class="messages--user"> From: ${newMessage.user.username}</div>
+        <div class="messages--date">Date: ${new Date(newMessage.date).toLocaleDateString('en-US')}</div></p>
+        ${allowDelete(newMessage)}
     </section>
     `
 }
