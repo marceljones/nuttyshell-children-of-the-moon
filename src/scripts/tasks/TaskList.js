@@ -4,7 +4,7 @@ import { TaskInputField } from "./Task.js";
 // DOM reference to where all tasks will be rendered
 const taskLog = document.querySelector("#taskList")
 const eventHub = document.querySelector(".main")
-const clickedBox = document.querySelector(".myCheck")
+
 
 const render = (taskTaco) => {
     let HTMLarray = taskTaco.map((word) => TaskInputField(word))
@@ -27,9 +27,10 @@ eventHub.addEventListener("savedTask", event => {
 })
 
 //checkbox listener
-// eventHub.addEventListener("checkboxComplete", event => {
-//     clickedBox = event.detail.isCompleted === true
-// })
+eventHub.addEventListener("checkboxComplete", event => {
+    const clickedBox = document.querySelector(".myCheck")
+    clickedBox = event.detail.checked === true
+})
 
 //delete task listener
 eventHub.addEventListener("click", event => {

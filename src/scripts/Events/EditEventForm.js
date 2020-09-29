@@ -37,8 +37,6 @@ export const editQuantityForm = (eventId) => {
     //     })
 }
 
-eventHub.add
-
 {/* <div class="eventCardList">    
         <h4 id="eventTitle--${eventObj.id}">${eventObj.name}</h4>
                 <p id="eventdate--${eventObj.id}">${eventObj.date}</p>
