@@ -38,7 +38,6 @@ eventHub.addEventListener("click", e => {
     
     //when edit button is selected
     eventHub.addEventListener("click", e =>{
-        debugger
         if (e.target.classList[0] === "editMessage-"){
             const listOfMessages = useMessages()
             const messageToEdit = listOfMessages.find(message => {

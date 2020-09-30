@@ -11,18 +11,21 @@ eventHub.addEventListener("click", clickEvent => {
         // const userId = document.querySelector("")
         const taskName = document.querySelector("#taskName")
         const taskCompleteDate = document.querySelector("#taskCompleteDate")
-        const isCompleted = document.querySelector("#completeButton")
-        
+        const checked = document.querySelector("#completeButton")
+
             const newTask = {
                 userId: parseInt(sessionStorage.getItem("activeUser")), 
                 task: taskName.value,
                 completeBy: taskCompleteDate.value,
-                isCompleted: false
+                checked: false
             }
 
             saveTasks(newTask)
 	}
 })
+
+
+
 
 
 // field: enter task name x 
@@ -36,15 +39,11 @@ eventHub.addEventListener("click", clickEvent => {
 const render = () => {
     contentTarget.innerHTML = `
     <section id="taskForm">
-    <form action="">
-        <fieldset>
-            <label for="taskName">Task</label>
-            <input type="name" name="taskName" id="taskName">          
-        </fieldset>
-        <fieldset>
-            <label for="taskCompleteDate">Expected Completion Date:</label>
-            <input type="date" name="taskCompleteDate" id="taskCompleteDate">         
-        </fieldset>
+    <form>
+            <label for="taskName">Task</label><br>
+            <input type="name" name="taskName" id="taskName"><br>      
+            <label for="taskCompleteDate">Expected Completion Date:</label><br>
+            <input type="date" name="taskCompleteDate" id="taskCompleteDate"><br>    
         <button id="saveTask" type="button">Save Task</button>           
     </form>
     </section>
