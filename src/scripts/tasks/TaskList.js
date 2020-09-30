@@ -11,7 +11,6 @@ const render = (taskTaco) => {
     taskLog.innerHTML = HTMLarray.join("")
 }
 
-
 export const TaskListComponent = () => {
     // Use the task data from the data provider component
     getTasks()
@@ -20,7 +19,6 @@ export const TaskListComponent = () => {
             render(tasks)
         })
     }
-
 //save button listener
 eventHub.addEventListener("savedTask", event => {
     TaskListComponent()

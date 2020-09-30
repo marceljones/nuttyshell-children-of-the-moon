@@ -1,4 +1,4 @@
-import { getMessages, useMessages, saveMessage, deleteMessage } from "./MessagesProvider.js"
+import { getMessages, useMessages, saveMessage } from "./MessagesProvider.js"
 
 const eventHub = document.querySelector(".main")
 const contentTarget = document.querySelector("#messageInput")
@@ -12,22 +12,22 @@ eventHub.addEventListener("click", e => {
         const taco = {
             userId: parseInt(sessionStorage.getItem("activeUser")),
             message: messageContent.value,
-            date: Date.now()        
+            date: Date.now()                                                                                                                
         }
-        
-        
         saveMessage(taco);
-    }})
+    }
+
+})
 
 const render = () => {
     contentTarget.innerHTML = `
-    <form>
-    <fieldset>
+   
+    <form id="messageFormBox">
         <h3>New Message</h3>
         <textarea id="text" placeholder="New Message Here"></textarea>
         <button type="button" class="button" id="submitButton">Submit</button> 
-    </fieldset>
     </form>
+   
     `
 }
 

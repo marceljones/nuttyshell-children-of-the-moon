@@ -6,6 +6,7 @@ import { ArticleForm } from "./article/ArticleForm.js";
 import { ArticleList } from "./article/ArticleList.js";
 import { messageListComponent } from "./messages/MessageList.js";
 import { messageForm } from "./messages/MessageForm.js";
+// import {weatherDays} from "./weather/WeatherList.js"
 
 export const Nutshell = () => {
     // debugger;

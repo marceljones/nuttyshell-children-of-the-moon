@@ -39,15 +39,11 @@ eventHub.addEventListener("click", clickEvent => {
 const render = () => {
     contentTarget.innerHTML = `
     <section id="taskForm">
-    <form action="">
-        <fieldset>
-            <label for="taskName">Task</label>
-            <input type="name" name="taskName" id="taskName">          
-        </fieldset>
-        <fieldset>
-            <label for="taskCompleteDate">Expected Completion Date:</label>
-            <input type="date" name="taskCompleteDate" id="taskCompleteDate">         
-        </fieldset>
+    <form>
+            <label for="taskName">Task</label><br>
+            <input type="name" name="taskName" id="taskName"><br>      
+            <label for="taskCompleteDate">Expected Completion Date:</label><br>
+            <input type="date" name="taskCompleteDate" id="taskCompleteDate"><br>    
         <button id="saveTask" type="button">Save Task</button>           
     </form>
     </section>
