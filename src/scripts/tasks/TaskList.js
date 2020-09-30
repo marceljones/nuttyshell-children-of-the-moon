@@ -1,36 +1,33 @@
-import { useTasks, getTasks, deleteTask} from "./TaskDataProvider.js";
+import { useTasks, getTasks, deleteTask } from "./TaskDataProvider.js";
 import { TaskInputField } from "./Task.js";
 
 // DOM reference to where all tasks will be rendered
-const taskLog = document.querySelector("#taskList")
-const eventHub = document.querySelector(".main")
+const taskLog = document.querySelector("#taskList");
+const eventHub = document.querySelector(".main");
 
-
-const render = (taskTaco) => {
-    let HTMLarray = taskTaco.map((word) => TaskInputField(word))
-    taskLog.innerHTML = HTMLarray.join("")
-}
-
+const render = taskTaco => {
+    let HTMLarray = taskTaco.map(word => TaskInputField(word));
+    taskLog.innerHTML = HTMLarray.join("");
+};
 
 export const TaskListComponent = () => {
     // Use the task data from the data provider component
-    getTasks()
-        .then(() => {
-            const tasks = useTasks()
-            render(tasks)
-        })
-    }
+    getTasks().then(() => {
+        const tasks = useTasks();
+        render(tasks);
+    });
+};
 
 //save button listener
 eventHub.addEventListener("savedTask", event => {
-    TaskListComponent()
-})
+    TaskListComponent();
+});
 
 //checkbox listener
 eventHub.addEventListener("checkboxComplete", event => {
-    const clickedBox = document.querySelector(".myCheck")
-    clickedBox = event.detail.checked === true
-})
+    const clickedBox = document.querySelector(".myCheck");
+    clickedBox = event.detail.checked === true;
+});
 
 //delete task listener
 eventHub.addEventListener("click", event => {
